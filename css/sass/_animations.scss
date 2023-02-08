@@ -1,0 +1,142 @@
+//logo animation
+
+.logo-svg {
+    opacity:0;
+    fill-opacity: 1;
+    stroke-width: 1;
+    animation: logo 3s  linear 7s forwards;
+}
+
+
+@keyframes logo {
+    0% {    
+        fill-opacity: 0;
+        stroke-dasharray: 1 1000;
+        stroke-dashoffset: 10;
+        stroke-width: 0;
+    }
+
+    30% {
+        opacity:1;
+        fill-opacity: 0;
+        stroke-dasharray: 30 500;
+        stroke-dashoffset: 60;
+        stroke-width:1;
+    }
+
+    70%,90% { opacity:1;
+        fill-opacity: 0;
+        stroke-dasharray: 150 0;  
+        stroke-dashoffset: 0;
+        stroke-width: 1;
+      
+    }
+
+    100% { opacity:1;
+        stroke-dasharray: 150 0;  
+        stroke-dashoffset: 0;
+        stroke-width: 1;
+        fill-opacity: 1;
+      
+    }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loading {
+    --color: #F8FBFF;
+    --duration: 2000ms;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 24px;
+    position: relative;
+    white-space: nowrap;
+    user-select: none;
+    color: var(--color);
+    span {
+        --x: 0;
+        --y: 0;
+        --move-y: 0;
+        --move-y-s: 0;
+        --delay: 0ms;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        text-indent: calc(var(--x) * -1);
+        overflow: hidden;
+        transform: translate(var(--x), var(--y));
+    }
+    &.start {
+        div {
+            opacity: 0;
+        }
+        span {
+            animation: move var(--duration) ease-in-out var(--delay);
+        }
+    }
+}
+
+@keyframes move {
+    30% {
+        transform: translate(var(--x), var(--move-y));
+    }
+    82% {
+        transform: translate(var(--x), var(--move-y-s));
+    }
+}
+
+
+// Center & dribbble
+
+
+.loading__center {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1999;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #020814;
+    
+/*
+    animation: ani2 0.7s  steps(22) reverse forwards;
+
+    @include button(#020814,
+    "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+    2300%,
+    100%,
+    none,
+    );*/
+}
+
